@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Calculate Price{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h2 class="mb-4">Product Price Calculator</h2>
+        <form method="post">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="mb-3">
+                <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                {{ field.errors }}
+                {{ field }}
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">Calculate Price</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
