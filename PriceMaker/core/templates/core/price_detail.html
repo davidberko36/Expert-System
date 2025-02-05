@@ -8,13 +8,35 @@
         <h3>{{ product.name }}</h3>
     </div>
     <div class="card-body">
-        <h5>Suggested Price: ${{ product.current_price }}</h5>
-        <p><strong>Base Cost:</strong> ${{ product.base_cost }}</p>
-        <p><strong>Competitor Price:</strong> ${{ product.competitor_price }}</p>
+        <h5>Suggested Price: 
+            {% if price_history %}
+                GHS{{ price_history.suggested_price }}
+            {% else %}
+                <span class="text-danger">Price not available</span>
+            {% endif %}
+        </h5>
+
+        <p><strong>Base Cost:</strong> GHS{{ product.base_cost }}</p>
+        <p><strong>Competitor Price:</strong> GHS{{ product.competitor_price }}</p>
         <p><strong>Market Demand:</strong> {{ product.market_demand }}</p>
         <p><strong>Customer WTP:</strong> {{ product.customer_wtp }}</p>
-        <p><strong>Reasoning:</strong> {{ price_history.reasoning }}</p>
-        <p><strong>Potential Risks:</strong> {{ price_history.potential_risks }}</p>
+        
+        <p><strong>Reasoning:</strong> 
+            {% if price_history %}
+                {{ price_history.reasoning }}
+            {% else %}
+                <span class="text-warning">No reasoning available</span>
+            {% endif %}
+        </p>
+        
+        <p><strong>Potential Risks:</strong> 
+            {% if price_history %}
+                {{ price_history.potential_risks }}
+            {% else %}
+                <span class="text-muted">No risk analysis provided</span>
+            {% endif %}
+        </p>
+
         <a href="{% url 'calculate_price' %}" class="btn btn-primary">Calculate New Price</a>
     </div>
 </div>

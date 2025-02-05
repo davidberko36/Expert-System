@@ -99,6 +99,7 @@ class PriceEngine:
             print(f"Querying: {query}")
 
             results = list(self.prolog.query(query))
+            print(f"Results: {results}")
 
             return {
                 'price': round(float(results[0]['FinalPrice']), 2),
