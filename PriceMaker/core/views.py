@@ -9,13 +9,12 @@ def calculate_price(request):
         form = ProductForm(request.POST)
         if form.is_valid():
             product = form.save(commit=False)
-            engine = PriceEngine() ## Uses prolog to calculate price
-            result = engine.calculate_price(product)
+            engine = PriceEngine()
+            result = engine.calculate_price(product)  # Pass model instance
 
             if result:
                 product.current_price = result['price']
                 product.save()
-
                 PriceHistory.objects.create(
                     product = product,
                     suggested_price = result['price'],
