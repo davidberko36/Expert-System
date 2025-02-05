@@ -18,11 +18,11 @@ This project is an Expert System developed for the DCIT313 course. The system is
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/davidberko36/expert-system.git
+    git clone https://github.com/davidberko36/Expert-system.git
     ```
 2. Navigate to the project directory:
     ```bash
-    cd expert-system
+    cd Expert-system
     ```
 3. Install the required libraries:
     ```bash
@@ -30,6 +30,11 @@ This project is an Expert System developed for the DCIT313 course. The system is
     ```
 
 ## Usage
+
+First, navigate to the main project:  
+```bash
+cd PriceMaker
+  ```
 
 1. Apply migrations to set up the database:
     ```bash
@@ -60,14 +65,14 @@ For any questions or suggestions, please contact David at daberko364@gmail.com.
 
 The project directory structure is as follows:
 ```
-expert-system/
-├── expert_system/
+PriceMaker/
+├── PriceMaker/
 │   ├── __init__.py
 │   ├── settings.py
 │   ├── urls.py
 │   ├── wsgi.py
 │   ├── asgi.py
-├── app_name/
+├── core/
 │   ├── migrations/
 │   ├── templates/
 │   ├── static/
