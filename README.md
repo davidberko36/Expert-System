@@ -18,7 +18,7 @@ This project is an Expert System developed for the DCIT313 course. The system is
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/expert-system.git
+    git clone https://github.com/davidberko36/expert-system.git
     ```
 2. Navigate to the project directory:
     ```bash
@@ -55,7 +55,7 @@ This project is licensed under the MIT License. See the `LICENSE` file for more 
 
 ## Contact
 
-For any questions or suggestions, please contact David at david@example.com.
+For any questions or suggestions, please contact David at daberko364@gmail.com.
 ## Project Structure
 
 The project directory structure is as follows:
